@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, "Segoe UI", system-ui, sans-serif;
+  --font-display: "Jua", "Pretendard Variable", sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: var(--font-sans);
+  /* 나무 테이블 바닥 */
+  background-color: #3a2213;
+  background-image:
+    repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.08) 0 2px, transparent 2px 48px),
+    linear-gradient(180deg, #4a2b17, #2c190c);
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
