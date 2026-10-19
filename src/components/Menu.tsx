@@ -1,6 +1,7 @@
-import { BookOpen, ChevronDown, Rabbit, Turtle, Zap, type LucideIcon } from 'lucide-react'
+import { BookOpen, ChevronDown, CircleHelp, Rabbit, Sparkles, Turtle, Zap, type LucideIcon } from 'lucide-react'
 import { motion } from 'motion/react'
 import { DIFFICULTIES } from '../game/ai'
+import { FAQ, SITE } from '../seo/content'
 import type { Difficulty, FruitId } from '../game/types'
 import { BellMark } from './Icons'
 import { CardFront } from './TableCard'
@@ -114,6 +115,35 @@ export default function Menu({ onStart }: { onStart: (level: Difficulty) => void
           <li>내 차례에 뒤집을 카드가 없으면 패배!</li>
         </ul>
       </details>
+
+      {/* 소개 + 자주 묻는 질문 (검색엔진이 읽는 본문이기도 함) */}
+      <section className="w-full space-y-3 text-left text-sm leading-relaxed text-white/85">
+        <h2 className="flex items-center gap-2 font-display text-base text-[#fff4d6]">
+          <Sparkles size={18} />
+          {SITE.name}은 어떤 게임?
+        </h2>
+        <p>{SITE.description}</p>
+
+        <h2 className="flex items-center gap-2 pt-2 font-display text-base text-[#fff4d6]">
+          <CircleHelp size={18} />
+          자주 묻는 질문
+        </h2>
+        <div className="space-y-2">
+          {FAQ.map(({ q, a }) => (
+            <details key={q} className="group rounded-xl bg-black/20 px-4 py-3">
+              <summary className="flex cursor-pointer list-none items-center gap-2 font-semibold text-white [&::-webkit-details-marker]:hidden">
+                <h3 className="flex-1">{q}</h3>
+                <ChevronDown size={16} className="shrink-0 transition group-open:rotate-180" />
+              </summary>
+              <p className="mt-2 text-white/80">{a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <footer className="pb-2 text-xs text-white/45">
+        © {SITE.name} · 설치 없이 즐기는 무료 미니게임
+      </footer>
     </div>
   )
 }

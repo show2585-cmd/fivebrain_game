@@ -1,0 +1,135 @@
+<!doctype html>
+<!-- 공유 미리보기 이미지(1200×630) 원본. 수정 후 scripts/brand/render.sh 로 public/og-image.png 재생성 -->
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../../node_modules/@fontsource/jua/index.css" />
+<link rel="stylesheet" href="../../node_modules/pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css" />
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    background:
+      repeating-linear-gradient(90deg, rgba(0,0,0,.09) 0 3px, transparent 3px 64px),
+      linear-gradient(180deg, #4a2b17, #2c190c);
+    font-family: "Pretendard Variable", sans-serif;
+  }
+  .felt {
+    position: absolute; inset: 26px;
+    border-radius: 44px; border: 14px solid #5b3216;
+    background: radial-gradient(ellipse at 65% 50%, #22985f 0%, #136b45 55%, #0b4a30 100%);
+    box-shadow: inset 0 0 90px rgba(0,0,0,.55), 0 14px 40px rgba(0,0,0,.5);
+  }
+  .copy { position: absolute; left: 92px; top: 74px; }
+  .title { font-family: "Jua"; font-size: 150px; line-height: .98; color: #fff4d6; text-shadow: 0 8px 0 #7a3e14, 0 0 40px rgba(0,0,0,.3); }
+  .title .row { display: flex; align-items: center; gap: 18px; }
+  .pill {
+    display: inline-block; margin-top: 30px; padding: 14px 28px 10px;
+    border-radius: 999px; background: #fcd34d; color: #5b3216;
+    font-family: "Jua"; font-size: 40px; line-height: 1; box-shadow: 0 6px 0 #b45309;
+  }
+  .chips { display: flex; gap: 12px; margin-top: 28px; }
+  .chip { padding: 9px 18px; border-radius: 999px; background: rgba(0,0,0,.32); color: #fff; font-weight: 700; font-size: 24px; border: 2px solid rgba(255,255,255,.15); }
+  .fan { position: absolute; left: 790px; top: 150px; width: 300px; height: 380px; }
+  .card {
+    position: absolute; left: 50%; top: 0; width: 210px; height: 294px; margin-left: -105px;
+    transform-origin: 50% 115%;
+    background: #fffdf6; border-radius: 24px; padding: 13px;
+    box-shadow: 0 10px 24px rgba(0,0,0,.45);
+  }
+  .card .inner { height: 100%; border-radius: 18px; border: 3px solid; display: grid; grid-template: repeat(3, 1fr) / repeat(3, 1fr); place-items: center; }
+  .card svg { width: 62px; height: 62px; }
+  .glow { position: absolute; left: 50%; top: 40%; width: 420px; height: 420px; margin: -210px 0 0 -210px; border-radius: 50%; background: radial-gradient(circle, rgba(253,224,71,.55), transparent 65%); }
+  .five {
+    position: absolute; right: -58px; top: -66px; width: 112px; height: 112px; border-radius: 50%;
+    background: #f43f5e; color: #fff; font-family: "Jua"; font-size: 54px; line-height: 1;
+    display: grid; place-items: center; transform: rotate(12deg);
+    border: 6px solid #fff4d6; box-shadow: 0 8px 0 #9f1239;
+  }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="banana" viewBox="0 0 64 64">
+      <path d="M12 16c-3 16 6 34 28 40 6 1.6 12 .5 14-2 1-1.4 0-2.6-1.6-2.8C34 48 22 36 20 17c-.3-3-7.5-4-8-1z" fill="#FFD43B" stroke="#B7791F" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M20 21c2 13 10 23 25 29" fill="none" stroke="#F59F00" stroke-width="2.5" stroke-linecap="round" opacity=".7"/>
+      <path d="M11 17l.5-6.5 6.5 1-1 6.5z" fill="#7C4A1E" stroke="#5C3714" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M15 24c0 8 3 15 8 20" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" opacity=".6"/>
+    </symbol>
+    <symbol id="strawberry" viewBox="0 0 64 64">
+      <path d="M32 58C17 50 9 37 11 27c2-8 10-10 21-6 11-4 19-2 21 6 2 10-6 23-21 31z" fill="#F03E3E" stroke="#A61E1E" stroke-width="2.5" stroke-linejoin="round"/>
+      <g fill="#FFE066">
+        <ellipse cx="24" cy="30" rx="1.3" ry="2"/><ellipse cx="32" cy="28" rx="1.3" ry="2"/><ellipse cx="40" cy="30" rx="1.3" ry="2"/>
+        <ellipse cx="20" cy="38" rx="1.3" ry="2"/><ellipse cx="28" cy="37" rx="1.3" ry="2"/><ellipse cx="36" cy="37" rx="1.3" ry="2"/><ellipse cx="44" cy="38" rx="1.3" ry="2"/>
+        <ellipse cx="25" cy="45" rx="1.3" ry="2"/><ellipse cx="32" cy="46" rx="1.3" ry="2"/><ellipse cx="39" cy="45" rx="1.3" ry="2"/><ellipse cx="32" cy="53" rx="1.3" ry="2"/>
+      </g>
+      <ellipse cx="19" cy="31" rx="2.5" ry="5.5" fill="#fff" opacity=".45" transform="rotate(20 19 31)"/>
+      <path d="M32 26 21 19h7l-3-8 7 5 7-5-3 8h7z" fill="#51CF66" stroke="#2B8A3E" stroke-width="2" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="grape" viewBox="0 0 64 64">
+      <path d="M32 18V8" stroke="#7C4A1E" stroke-width="3" stroke-linecap="round"/>
+      <path d="M32 11c4-5 11-6 16-3-3 5-10 6-16 3z" fill="#51CF66" stroke="#2B8A3E" stroke-width="2" stroke-linejoin="round"/>
+      <g fill="#9775FA" stroke="#5F3DC4" stroke-width="2.2">
+        <circle cx="20" cy="25" r="7.5"/><circle cx="32" cy="25" r="7.5"/><circle cx="44" cy="25" r="7.5"/>
+        <circle cx="20" cy="40" r="7.5"/><circle cx="44" cy="40" r="7.5"/><circle cx="26" cy="36" r="7.5"/>
+        <circle cx="38" cy="36" r="7.5"/><circle cx="32" cy="47" r="7.5"/>
+      </g>
+      <g fill="#fff" opacity=".55">
+        <circle cx="17.5" cy="22.5" r="2"/><circle cx="29.5" cy="22.5" r="2"/><circle cx="41.5" cy="22.5" r="2"/>
+        <circle cx="23.5" cy="33.5" r="2"/><circle cx="35.5" cy="33.5" r="2"/><circle cx="29.5" cy="44.5" r="2"/>
+      </g>
+    </symbol>
+    <symbol id="bell" viewBox="0 0 64 64">
+      <rect x="5" y="49" width="54" height="8" rx="4" fill="#8B4A1C" stroke="#4A2509" stroke-width="2.5"/>
+      <path d="M10 50Q10 21 32 19q22 2 22 31z" fill="#FCC419" stroke="#B08900" stroke-width="2.5" stroke-linejoin="round"/>
+      <rect x="29" y="11" width="6" height="9" rx="2" fill="#868E96" stroke="#495057" stroke-width="2"/>
+      <ellipse cx="32" cy="10" rx="7" ry="3.5" fill="#FCC419" stroke="#B08900" stroke-width="2"/>
+      <ellipse cx="22" cy="33" rx="3.5" ry="8" fill="#fff" opacity=".55" transform="rotate(25 22 33)"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="felt"></div>
+
+<div class="copy">
+  <div class="title">
+    <div class="row"><svg width="120" height="120"><use href="#bell"/></svg>오감</div>
+    <div class="row">브레인</div>
+  </div>
+  <div class="pill">AI와 겨루는 반응속도 두뇌게임</div>
+  <div class="chips">
+    <span class="chip">무료 웹게임</span>
+    <span class="chip">설치 없이 바로</span>
+    <span class="chip">PC · 모바일</span>
+  </div>
+</div>
+
+<div class="fan">
+  <div class="glow"></div>
+  <div class="card" style="transform: rotate(-17deg)">
+    <div class="inner" style="border-color:#fb7185;background:#fff1f2">
+      <svg style="grid-area:1/1"><use href="#strawberry"/></svg>
+      <svg style="grid-area:3/3"><use href="#strawberry"/></svg>
+    </div>
+  </div>
+  <div class="card" style="transform: rotate(17deg)">
+    <div class="inner" style="border-color:#a78bfa;background:#f5f3ff">
+      <svg style="grid-area:1/1"><use href="#grape"/></svg>
+      <svg style="grid-area:2/2"><use href="#grape"/></svg>
+      <svg style="grid-area:3/3"><use href="#grape"/></svg>
+    </div>
+  </div>
+  <div class="card" style="transform: translateY(-14px); box-shadow: 0 0 0 5px #fde047, 0 0 40px 10px rgba(253,224,71,.8), 0 12px 28px rgba(0,0,0,.5)">
+    <div class="inner" style="border-color:#facc15;background:#fefce8">
+      <svg style="grid-area:1/1"><use href="#banana"/></svg>
+      <svg style="grid-area:1/3"><use href="#banana"/></svg>
+      <svg style="grid-area:2/2"><use href="#banana"/></svg>
+      <svg style="grid-area:3/1"><use href="#banana"/></svg>
+      <svg style="grid-area:3/3"><use href="#banana"/></svg>
+    </div>
+    <div class="five">5!</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "오감 브레인 - 반응속도 두뇌게임",
+  "short_name": "오감 브레인",
+  "description": "AI와 겨루는 무료 반응속도 두뇌게임. 과일이 정확히 5개가 되는 순간 종을 치세요!",
+  "lang": "ko",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#3a2213",
+  "theme_color": "#3a2213",
+  "categories": ["games", "entertainment", "education"],
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

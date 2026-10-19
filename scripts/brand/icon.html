@@ -1,0 +1,37 @@
+<!doctype html>
+<!-- 앱 아이콘 원본(512px 기준). 작은 크기는 render.sh가 배율을 줄여 렌더링 -->
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<style>
+  html, body { margin: 0; width: 512px; height: 512px; overflow: hidden; }
+  /* 마스커블 아이콘을 위해 배경은 가장자리까지 채우고, 종은 가운데 안전 영역 안에 둔다 */
+  body {
+    display: grid; place-items: center;
+    background:
+      repeating-linear-gradient(45deg, rgba(255,255,255,.07) 0 20.48px, transparent 20.48px 40.96px),
+      repeating-linear-gradient(-45deg, rgba(255,255,255,.07) 0 20.48px, transparent 20.48px 40.96px),
+      radial-gradient(circle at 50% 40%, #e11d48, #9f1239);
+  }
+  .medal {
+    width: 337.92px; height: 337.92px; border-radius: 50%;
+    display: grid; place-items: center;
+    background: radial-gradient(circle at 50% 35%, #be123c, #881337);
+    border: 16.384px solid #fde68a;
+    box-shadow: 0 12.288px 0 rgba(0,0,0,.25), inset 0 0 30.72px rgba(0,0,0,.35);
+  }
+  svg { width: 225.28px; height: 225.28px; margin-top: -10.24px; filter: drop-shadow(0 8.192px 6.144px rgba(0,0,0,.35)); }
+</style>
+</head>
+<body>
+  <div class="medal">
+    <svg viewBox="0 0 64 64">
+      <rect x="5" y="49" width="54" height="8" rx="4" fill="#8B4A1C" stroke="#4A2509" stroke-width="2.5"/>
+      <path d="M10 50Q10 21 32 19q22 2 22 31z" fill="#FCC419" stroke="#B08900" stroke-width="2.5" stroke-linejoin="round"/>
+      <rect x="29" y="11" width="6" height="9" rx="2" fill="#868E96" stroke="#495057" stroke-width="2"/>
+      <ellipse cx="32" cy="10" rx="7" ry="3.5" fill="#FCC419" stroke="#B08900" stroke-width="2"/>
+      <ellipse cx="22" cy="33" rx="3.5" ry="8" fill="#fff" opacity=".55" transform="rotate(25 22 33)"/>
+    </svg>
+  </div>
+</body>
+</html>

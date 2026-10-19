@@ -159,60 +159,62 @@ function App() {
   }
 
   return (
-    <div className="mx-auto flex h-dvh max-w-md flex-col px-3 py-3">
-      {phase === 'menu' ? (
-        <Menu onStart={start} />
-      ) : (
-        <>
-          <header className="mb-3 flex items-center justify-between gap-2 text-white">
-            <button
-              type="button"
-              onClick={menu}
-              aria-label="나가기"
-              className="grid size-9 cursor-pointer place-items-center rounded-full bg-black/30 hover:bg-black/45"
-            >
-              <ArrowLeft size={18} strokeWidth={2.5} />
-            </button>
-            <h1 className="flex items-center gap-1.5 font-display text-2xl leading-none text-[#fff4d6]">
-              <BellMark size={26} />
-              오감 브레인
-            </h1>
-            <div className="flex items-center gap-1.5">
-              <span className="rounded-full bg-black/30 px-3 pb-1.5 pt-2 font-display text-sm leading-none">
-                {DIFFICULTIES[difficulty].label}
-              </span>
+    <div className={`h-dvh ${phase === 'menu' ? 'overflow-y-auto' : 'overflow-hidden'}`}>
+      <div className={`mx-auto flex max-w-md flex-col px-3 py-3 ${phase === 'menu' ? 'min-h-full' : 'h-full'}`}>
+        {phase === 'menu' ? (
+          <Menu onStart={start} />
+        ) : (
+          <>
+            <header className="mb-3 flex items-center justify-between gap-2 text-white">
               <button
                 type="button"
-                onClick={toggleMute}
-                aria-label={muted ? '소리 켜기' : '소리 끄기'}
+                onClick={menu}
+                aria-label="나가기"
                 className="grid size-9 cursor-pointer place-items-center rounded-full bg-black/30 hover:bg-black/45"
               >
-                {muted ? <VolumeX size={18} strokeWidth={2.5} /> : <Volume2 size={18} strokeWidth={2.5} />}
+                <ArrowLeft size={18} strokeWidth={2.5} />
               </button>
-            </div>
-          </header>
+              <h1 className="flex items-center gap-1.5 font-display text-2xl leading-none text-[#fff4d6]">
+                <BellMark size={26} />
+                오감 브레인
+              </h1>
+              <div className="flex items-center gap-1.5">
+                <span className="rounded-full bg-black/30 px-3 pb-1.5 pt-2 font-display text-sm leading-none">
+                  {DIFFICULTIES[difficulty].label}
+                </span>
+                <button
+                  type="button"
+                  onClick={toggleMute}
+                  aria-label={muted ? '소리 켜기' : '소리 끄기'}
+                  className="grid size-9 cursor-pointer place-items-center rounded-full bg-black/30 hover:bg-black/45"
+                >
+                  {muted ? <VolumeX size={18} strokeWidth={2.5} /> : <Volume2 size={18} strokeWidth={2.5} />}
+                </button>
+              </div>
+            </header>
 
-          <Table
-            key={state.gameId}
-            state={state}
-            canFlip={canFlip}
-            turnLimit={limit}
-            danger={playing && danger}
-            heartRate={heartRate}
-            onFlip={flip}
-            onRing={ring}
+            <Table
+              key={state.gameId}
+              state={state}
+              canFlip={canFlip}
+              turnLimit={limit}
+              danger={playing && danger}
+              heartRate={heartRate}
+              onFlip={flip}
+              onRing={ring}
+            />
+          </>
+        )}
+
+        {phase === 'over' && (
+          <GameOver
+            winner={state.winner}
+            stats={state.stats}
+            onRetry={() => start(difficulty)}
+            onMenu={menu}
           />
-        </>
-      )}
-
-      {phase === 'over' && (
-        <GameOver
-          winner={state.winner}
-          stats={state.stats}
-          onRetry={() => start(difficulty)}
-          onMenu={menu}
-        />
-      )}
+        )}
+      </div>
     </div>
   )
 }
